@@ -331,6 +331,20 @@ kbd {
   .btn { text-align: center; }
   .ghost { color: light-dark(var(--plum-2), #fff); }
 
+  .note {
+    margin-block-start: 6px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: light-dark(#fdf6e3, #33301f);
+    border-inline-start: 4px solid var(--c-yellow);
+    font-size: 0.9rem;
+
+    summary { cursor: pointer; font-weight: 700; }
+    p, ol { flex: none; margin: 8px 0 0; color: var(--text); }
+    ol { padding-inline-start: 1.3em; display: grid; gap: 4px; }
+    p:last-child { color: var(--muted); font-style: italic; }
+  }
+
   &.current { border-color: var(--plum-3); box-shadow: 0 0 0 3px color-mix(in srgb, var(--plum-3) 30%, transparent); }
 }
 
