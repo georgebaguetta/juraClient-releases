@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>juraClient — mail and calendar for Mac and Windows</title>
+  <meta name="description" content="A fast native mail app with a calendar. Rust core, native interface on macOS and Windows.">
+  <link rel="icon" href="assets/icon-256.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#"><img src="assets/icon-256.png" alt="" width="32" height="32">juraClient</a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#calendar">Calendar</a>
+      <a class="pill" href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <img class="hero-icon" src="assets/icon.png" alt="juraClient icon" width="128" height="128">
+        <h1>Mail that keeps up with you.</h1>
+        <p class="lead">juraClient is a native mail app with a built-in calendar. One fast Rust core, a real native interface on macOS and Windows. Your mail stays on your computer.</p>
+        <div class="cta">
+          <a class="btn primary" id="primary-download" href="#download">Download for free</a>
+          <a class="btn ghost" href="https://github.com/georgebaguetta/juraClient">Source on GitHub</a>
+        </div>
+        <p class="fine" id="primary-note">macOS 14+ (Apple Silicon) · Windows 10/11 (x64, ARM64)</p>
+      </div>
+
+      <div class="window" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i></div>
+        <div class="win-body">
+          <aside class="win-side">
+            <b>Work</b>
+            <span class="on">Inbox <em>12</em></span>
+            <span>Sent</span>
+            <span>Send later</span>
+            <span>Archive</span>
+            <b>Calendar</b>
+            <span>This week</span>
+          </aside>
+          <ul class="win-list">
+            <li class="on"><span class="av" style="--h: 210">AN</span><div><strong>Anna Novak</strong><p>Your sign-in code is 482913</p></div></li>
+            <li><span class="av" style="--h: 150">CS</span><div><strong>Czech Airlines</strong><p>OK 652 · Prague → Paris, Fri 07:40</p></div></li>
+            <li><span class="av" style="--h: 30">TM</span><div><strong>Tomas M.</strong><p>Invitation: Design review, Tue 14:00</p></div></li>
+            <li><span class="av" style="--h: 280">NL</span><div><strong>Newsletter</strong><p>Weekly digest — unsubscribe in one click</p></div></li>
+          </ul>
+          <article class="win-read">
+            <strong>Your sign-in code</strong>
+            <p>Hi! Use this code to finish signing in.</p>
+            <span class="chip">482913 · Copy</span>
+            <span class="bar"></span><span class="bar short"></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Everything a mail app should do, without the wait</h2>
+      <div class="grid">
+        <article><h3>Instant inbox</h3><p>IMAP IDLE delivers new mail the moment it arrives. A local SQLite store makes every folder open at once, online or offline.</p></article>
+        <article><h3>Smart tabs</h3><p>People, updates and newsletters are sorted into tabs, so the mail from real people stays on top.</p></article>
+        <article><h3>Codes and flights</h3><p>Sign-in codes get a copy button. Flight confirmations become a card with airline, route, time and booking code.</p></article>
+        <article><h3>Undo Send and Send Later</h3><p>Take a message back after you press Send, or schedule it for the morning.</p></article>
+        <article><h3>Full-text search</h3><p>FTS5 search goes through every message you have, in milliseconds.</p></article>
+        <article><h3>Rules and one-click unsubscribe</h3><p>Move, mark and archive mail automatically. Leave mailing lists without opening them.</p></article>
+        <article><h3>Sender checks</h3><p>Warnings for look-alike addresses and messages that fail authentication.</p></article>
+        <article><h3>Easy setup</h3><p>Type your address. juraClient finds the servers for you.</p></article>
+        <article><h3>Optional AI summary</h3><p>Get the gist of a long thread with your own API key. Off until you turn it on.</p></article>
+      </div>
+    </section>
+
+    <section id="calendar" class="split">
+      <div>
+        <h2>A calendar that speaks CalDAV</h2>
+        <p>Connect iCloud, Fastmail, Nextcloud, Radicale, Baïkal, Zoho or Yahoo. Day, week and month views, repeating events that keep their time when the clocks change, and invitations that go from your inbox straight into the calendar.</p>
+        <p class="keys"><kbd>T</kbd> today <kbd>D</kbd><kbd>W</kbd><kbd>M</kbd> view <kbd>←</kbd><kbd>→</kbd> move <kbd>N</kbd> new event</p>
+      </div>
+      <div class="cal" aria-hidden="true">
+        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span>
+        <i style="--c: 1; --r: 2 / 4">Standup</i>
+        <i style="--c: 2; --r: 4 / 7" class="b">Design review</i>
+        <i style="--c: 3; --r: 2 / 3">Standup</i>
+        <i style="--c: 4; --r: 5 / 8" class="g">Workshop</i>
+        <i style="--c: 5; --r: 2 / 4" class="o">OK 652 → Paris</i>
+      </div>
+    </section>
+
+    <section class="split reverse">
+      <div>
+        <h2>Native on both systems</h2>
+        <p>The mail engine is written once in Rust: sync, storage, MIME, SMTP and the calendar. On the Mac it runs under a SwiftUI interface; on Windows under WinUI 3. Each one looks and feels at home.</p>
+        <p>Passwords live in the macOS Keychain or the Windows Credential Manager, never in plain files.</p>
+      </div>
+      <ul class="stack" aria-hidden="true">
+        <li class="mac">SwiftUI · macOS</li>
+        <li class="win">WinUI 3 · Windows</li>
+        <li class="core">Rust core · IMAP · SMTP · CalDAV · SQLite</li>
+      </ul>
+    </section>
+
+    <section id="download" class="download">
+      <h2>Download juraClient</h2>
+      <p class="lead">Free. Version 0.1.0.</p>
+      <div class="cards">
+        <article class="card" data-os="mac">
+          <h3>macOS</h3>
+          <p>macOS 14 Sonoma or later, Apple Silicon. Installs into Applications.</p>
+          <a class="btn primary" href="https://github.com/georgebaguetta/juraClient/releases/latest/download/juraClient-macOS.pkg">Download .pkg</a>
+        </article>
+        <article class="card" data-os="win">
+          <h3>Windows</h3>
+          <p>Windows 10 (2004) or Windows 11. Unzip and run juraClient.exe.</p>
+          <a class="btn primary" data-arch="x64" href="https://github.com/georgebaguetta/juraClient/releases/latest/download/juraClient-Windows-x64.zip">Download for x64</a>
+          <a class="btn ghost" data-arch="arm64" href="https://github.com/georgebaguetta/juraClient/releases/latest/download/juraClient-Windows-arm64.zip">Download for ARM64</a>
+        </article>
+      </div>
+      <p class="fine">All versions and release notes are on the <a href="https://github.com/georgebaguetta/juraClient/releases">releases page</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 juraClient</span>
+    <a href="https://github.com/georgebaguetta/juraClient">GitHub</a>
+  </footer>
+</body>
+</html>
