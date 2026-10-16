@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>juraClient — mail and calendar for Mac and Windows</title>
-  <meta name="description" content="A fast native mail app with a calendar. Rust core, native interface on macOS and Windows.">
+  <meta name="description" content="A fast native mail app with a calendar, for Mac and Windows. Built with love, Rust and an unreasonable number of prompts.">
   <link rel="icon" href="assets/icon-256.png">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="main.js"></script>
@@ -14,7 +14,7 @@
     <a class="brand" href="#"><img src="assets/icon-256.png" alt="" width="32" height="32">juraClient</a>
     <nav>
       <a href="#features">Features</a>
-      <a href="#calendar">Calendar</a>
+      <a href="#vibes">Team chat</a>
       <a class="pill" href="#download">Download</a>
     </nav>
   </header>
@@ -22,110 +22,124 @@
   <main>
     <section class="hero">
       <div class="hero-text">
-        <img class="hero-icon" src="assets/icon.png" alt="juraClient icon" width="128" height="128">
-        <h1>Mail that keeps up with you.</h1>
-        <p class="lead">juraClient is a native mail app with a built-in calendar. One fast Rust core, a real native interface on macOS and Windows. Your mail stays on your computer.</p>
+        <p class="eyebrow">Vibe-coded with love · reviewed by nobody · works anyway</p>
+        <h1>Your mail, as easy as a&nbsp;chat.</h1>
+        <p class="lead">juraClient is a native mail app with a built-in calendar. Folders work like channels, threads read like a conversation, and you can reply without leaving the inbox. Your mail stays on your computer. Our code stays in the chat history.</p>
         <div class="cta">
           <a class="btn primary" id="primary-download" href="#download">Download for free</a>
-          <a class="btn ghost" href="#features">See features</a>
+          <a class="btn ghost" href="#features">Show me what the AI built</a>
         </div>
         <p class="fine" id="primary-note">macOS 14+ (Apple Silicon) · Windows 10/11 (x64, ARM64)</p>
       </div>
 
-      <div class="window" aria-hidden="true">
-        <div class="win-bar"><i></i><i></i><i></i></div>
-        <div class="win-body">
-          <aside class="win-side">
-            <b>Work</b>
-            <span class="on">Inbox <em>12</em></span>
-            <span>Sent</span>
-            <span>Send later</span>
-            <span>Archive</span>
-            <b>Calendar</b>
-            <span>This week</span>
-          </aside>
-          <ul class="win-list">
-            <li class="on"><span class="av" style="--h: 210">AN</span><div><strong>Anna Novak</strong><p>Your sign-in code is 482913</p></div></li>
-            <li><span class="av" style="--h: 150">CS</span><div><strong>Czech Airlines</strong><p>OK 652 · Prague → Paris, Fri 07:40</p></div></li>
-            <li><span class="av" style="--h: 30">TM</span><div><strong>Tomas M.</strong><p>Invitation: Design review, Tue 14:00</p></div></li>
-            <li><span class="av" style="--h: 280">NL</span><div><strong>Newsletter</strong><p>Weekly digest — unsubscribe in one click</p></div></li>
-          </ul>
-          <article class="win-read">
-            <strong>Your sign-in code</strong>
-            <p>Hi! Use this code to finish signing in.</p>
-            <span class="chip">482913 · Copy</span>
-            <span class="bar"></span><span class="bar short"></span>
-          </article>
+      <figure class="shot">
+        <picture>
+          <source srcset="assets/screenshot-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="assets/screenshot-light.png" width="1280" height="800" alt="juraClient on macOS: accounts and people in the sidebar, the inbox with Primary, Social, Promos and Updates tabs, and an open thread with a quick reply box.">
+        </picture>
+        <figcaption>A real screenshot. Not generated. We checked. Twice. With a human.</figcaption>
+      </figure>
+    </section>
+
+    <section class="strip" aria-label="Highlights">
+      <p><b>#</b> Folders as channels</p>
+      <p><b>↩</b> Quick reply in the thread</p>
+      <p><b>⏱</b> Undo Send, for regrets</p>
+      <p><b>⌘</b> Keyboard first, prompt second</p>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Everything a mail app should do, without the&nbsp;wait</h2>
+      <p class="lead">Every feature below works. We know because we asked the model, and it said “Absolutely!”</p>
+      <div class="grid">
+        <article style="--accent: var(--c-blue)"><h3>Instant inbox</h3><p>IMAP IDLE delivers new mail the moment it arrives. A local SQLite store opens every folder at once, online or offline. Faster than a vibe coder saying “it works on my machine”.</p></article>
+        <article style="--accent: var(--c-green)"><h3>Smart tabs</h3><p>People, social, promos and updates get their own tabs, so mail from real humans stays on top. Mail from AI agents goes where it belongs.</p></article>
+        <article style="--accent: var(--c-yellow)"><h3>Codes and flights</h3><p>Sign-in codes get a copy button. Flight confirmations become a card with route, time and booking code. Your deploy keys still go in a .env file you'll commit by accident.</p></article>
+        <article style="--accent: var(--c-red)"><h3>Undo Send and Send Later</h3><p>Take a message back after you press Send, or schedule it for the morning. Basically <kbd>git revert</kbd> for your social life.</p></article>
+        <article style="--accent: var(--c-blue)"><h3>Full-text search</h3><p>FTS5 goes through every message you have in milliseconds. Unlike us going through the code the AI wrote last Tuesday.</p></article>
+        <article style="--accent: var(--c-green)"><h3>Rules and one-click unsubscribe</h3><p>Move, mark and archive mail automatically. Leave mailing lists without opening them. If only leaving a 400-message Slack thread were this easy.</p></article>
+        <article style="--accent: var(--c-yellow)"><h3>Sender checks</h3><p>Warnings for look-alike addresses, external senders and mail that fails authentication. The one part of the app nobody was allowed to vibe.</p></article>
+        <article style="--accent: var(--c-red)"><h3>Easy setup</h3><p>Type your address and juraClient finds the servers for you. No YAML. No Docker. No “just run these 14 commands”.</p></article>
+        <article style="--accent: var(--c-blue)"><h3>Optional AI summary</h3><p>Get the gist of a long thread with your own API key. Off until you turn it on. Yes, the app built by AI is the one that asks before using AI.</p></article>
+      </div>
+    </section>
+
+    <section id="calendar" class="band">
+      <div class="split">
+        <div>
+          <h2>A calendar that speaks CalDAV</h2>
+          <p>Connect iCloud, Fastmail, Nextcloud, Radicale, Baïkal, Zoho or Yahoo. Day, week and month views, repeating events that keep their time when the clocks change, and invitations that go from your inbox straight into the calendar.</p>
+          <p>Time zones were the only bug the AI refused to touch. It said “this is above my pay grade” and we respected that.</p>
+          <p class="keys"><kbd>T</kbd> today <kbd>D</kbd><kbd>W</kbd><kbd>M</kbd> view <kbd>←</kbd><kbd>→</kbd> move <kbd>N</kbd> new event</p>
+        </div>
+        <div>
+          <h2>Native on both systems</h2>
+          <p>The mail engine is written once in Rust: sync, storage, MIME, SMTP and the calendar. On the Mac it runs under SwiftUI, on Windows under WinUI 3. Not Electron. We checked the prompt history to be sure.</p>
+          <p>Passwords live in the macOS Keychain or the Windows Credential Manager, never in plain files. Which is more than we can say for our own API keys.</p>
         </div>
       </div>
     </section>
 
-    <section id="features" class="features">
-      <h2>Everything a mail app should do, without the wait</h2>
-      <div class="grid">
-        <article><h3>Instant inbox</h3><p>IMAP IDLE delivers new mail the moment it arrives. A local SQLite store makes every folder open at once, online or offline.</p></article>
-        <article><h3>Smart tabs</h3><p>People, updates and newsletters are sorted into tabs, so the mail from real people stays on top.</p></article>
-        <article><h3>Codes and flights</h3><p>Sign-in codes get a copy button. Flight confirmations become a card with airline, route, time and booking code.</p></article>
-        <article><h3>Undo Send and Send Later</h3><p>Take a message back after you press Send, or schedule it for the morning.</p></article>
-        <article><h3>Full-text search</h3><p>FTS5 search goes through every message you have, in milliseconds.</p></article>
-        <article><h3>Rules and one-click unsubscribe</h3><p>Move, mark and archive mail automatically. Leave mailing lists without opening them.</p></article>
-        <article><h3>Sender checks</h3><p>Warnings for look-alike addresses and messages that fail authentication.</p></article>
-        <article><h3>Easy setup</h3><p>Type your address. juraClient finds the servers for you.</p></article>
-        <article><h3>Optional AI summary</h3><p>Get the gist of a long thread with your own API key. Off until you turn it on.</p></article>
+    <section id="vibes" class="vibes">
+      <h2>Made by vibe coders. Tested by vibe&nbsp;coders. Mostly.</h2>
+      <p class="lead">Overheard in our team chat. Names changed to protect the prompt engineers.</p>
+      <div class="channel">
+        <div class="channel-head"><b>#</b> vibe-coding <span>142 members · 3 of them read the code</span></div>
+        <ul class="msgs">
+          <li><span class="av" style="--h: 280">VK</span><div><p><strong>Viktor</strong> <time>09:02</time></p><p>Shipped a new feature. No idea what it does, but the tests are green. I asked the AI to write the tests too.</p></div></li>
+          <li><span class="av" style="--h: 150">MJ</span><div><p><strong>Marta</strong> <time>09:04</time></p><p>My code review process: I ask the AI if the code is good. It says “Great question!” Approved. 🚀</p></div></li>
+          <li><span class="av" style="--h: 30">PB</span><div><p><strong>Pavel</strong> <time>09:11</time></p><p>Senior vibe coder means I know which button says “Accept all”.</p></div></li>
+          <li><span class="av" style="--h: 210">LS</span><div><p><strong>Lena</strong> <time>09:15</time></p><p>Wrote 40,000 lines this week. Read 12 of them.</p><span class="react">😂 37</span><span class="react">💯 12</span></div></li>
+          <li><span class="av" style="--h: 340">DT</span><div><p><strong>Dan</strong> <time>09:20</time></p><p>Prompt: “fix the bug.” Result: three new bugs and a very confident commit message.</p></div></li>
+          <li><span class="av" style="--h: 100">OK</span><div><p><strong>Olga</strong> <time>09:23</time></p><p>Git history in our repo: “fix”, “fix 2”, “actually fix”, “please work”, “ok the AI fixed it”.</p></div></li>
+          <li><span class="av" style="--h: 50">TR</span><div><p><strong>Tomas</strong> <time>09:31</time></p><p>Rubber duck debugging is over. Now the duck writes the code and I nod.</p></div></li>
+          <li><span class="av" style="--h: 190">AN</span><div><p><strong>Anna</strong> <time>09:40</time></p><p>Asked the model to add dark mode. It also added a blockchain. Keeping it, the vibes were right.</p></div></li>
+          <li><span class="av" style="--h: 0">JB</span><div><p><strong>Jura</strong> <time>09:44</time></p><p>Fun fact: juraClient opens your inbox in under a second. Our developers open theirs at 3 a.m., after the context window runs out.</p><span class="react">🫠 58</span></div></li>
+          <li><span class="av" style="--h: 260">MS</span><div><p><strong>Martin</strong> <time>09:52</time></p><p>Stack Overflow? Never heard of it. I just paste the error back in until it goes away.</p></div></li>
+          <li><span class="av" style="--h: 120">EV</span><div><p><strong>Eva</strong> <time>10:03</time></p><p>The best part of vibe coding is the documentation. There isn't any, so it's always up to date.</p></div></li>
+          <li class="typing"><span class="av" style="--h: 220">AI</span><div><p><strong>Assistant</strong></p><p>You're absolutely right! Let me rewrite the whole app…</p></div></li>
+        </ul>
       </div>
     </section>
 
-    <section id="calendar" class="split">
-      <div>
-        <h2>A calendar that speaks CalDAV</h2>
-        <p>Connect iCloud, Fastmail, Nextcloud, Radicale, Baïkal, Zoho or Yahoo. Day, week and month views, repeating events that keep their time when the clocks change, and invitations that go from your inbox straight into the calendar.</p>
-        <p class="keys"><kbd>T</kbd> today <kbd>D</kbd><kbd>W</kbd><kbd>M</kbd> view <kbd>←</kbd><kbd>→</kbd> move <kbd>N</kbd> new event</p>
-      </div>
-      <div class="cal" aria-hidden="true">
-        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span>
-        <i style="--c: 1; --r: 2 / 4">Standup</i>
-        <i style="--c: 2; --r: 4 / 7" class="b">Design review</i>
-        <i style="--c: 3; --r: 2 / 3">Standup</i>
-        <i style="--c: 4; --r: 5 / 8" class="g">Workshop</i>
-        <i style="--c: 5; --r: 2 / 4" class="o">OK 652 → Paris</i>
-      </div>
-    </section>
-
-    <section class="split reverse">
-      <div>
-        <h2>Native on both systems</h2>
-        <p>The mail engine is written once in Rust: sync, storage, MIME, SMTP and the calendar. On the Mac it runs under a SwiftUI interface; on Windows under WinUI 3. Each one looks and feels at home.</p>
-        <p>Passwords live in the macOS Keychain or the Windows Credential Manager, never in plain files.</p>
-      </div>
-      <ul class="stack" aria-hidden="true">
-        <li class="mac">SwiftUI · macOS</li>
-        <li class="win">WinUI 3 · Windows</li>
-        <li class="core">Rust core · IMAP · SMTP · CalDAV · SQLite</li>
-      </ul>
+    <section class="faq">
+      <h2>Questions nobody asked</h2>
+      <dl>
+        <dt>Is it really free?</dt>
+        <dd>Yes. The tokens were expensive enough.</dd>
+        <dt>Who wrote the code?</dt>
+        <dd>Legally, us. Emotionally, it's complicated.</dd>
+        <dt>Does it have bugs?</dt>
+        <dd>It has undocumented features. Like every app, but we're honest about it.</dd>
+        <dt>Will there be a Linux version?</dt>
+        <dd>As soon as someone writes a good enough prompt.</dd>
+        <dt>Can I send feedback?</dt>
+        <dd>Of course. Paste it into the chat, we'll forward it to the model.</dd>
+      </dl>
     </section>
 
     <section id="download" class="download">
       <h2>Download juraClient</h2>
-      <p class="lead">Free. Version 67.</p>
+      <p class="lead">Free. Version 67. That's 66 versions of “almost there”.</p>
       <div class="cards">
         <article class="card" data-os="mac">
           <h3>macOS</h3>
-          <p>macOS 14 Sonoma or later, Apple Silicon. Installs into Applications.</p>
+          <p>macOS 14 Sonoma or later, Apple Silicon. Installs into Applications. Intel Macs: we tried, the prompt timed out.</p>
           <a class="btn primary" href="https://github.com/georgebaguetta/juraClient-releases/releases/latest/download/juraClient-macOS.pkg">Download .pkg</a>
         </article>
         <article class="card" data-os="win">
           <h3>Windows</h3>
-          <p>Windows 10 (2004) or Windows 11. Installs for your user, no admin rights needed.</p>
+          <p>Windows 10 (2004) or Windows 11. Installs for your user, no admin rights needed. Your IT department will never know.</p>
           <a class="btn primary" data-arch="x64" href="https://github.com/georgebaguetta/juraClient-releases/releases/latest/download/juraClient-Windows-x64.msi">Download for x64</a>
           <a class="btn ghost" data-arch="arm64" href="https://github.com/georgebaguetta/juraClient-releases/releases/latest/download/juraClient-Windows-arm64.msi">Download for ARM64</a>
         </article>
       </div>
-      <p class="fine">All versions and release notes are on the <a href="https://github.com/georgebaguetta/juraClient-releases/releases">releases page</a>.</p>
+      <p class="fine">All versions and release notes are on the <a href="https://github.com/georgebaguetta/juraClient-releases/releases">releases page</a>. Release notes written by a human, mostly by copy and paste.</p>
     </section>
   </main>
 
   <footer>
-    <span>© 2026 juraClient</span>
+    <span>© 2026 juraClient · No developers were harmed. A few context windows were.</span>
     <a href="https://github.com/georgebaguetta/juraClient-releases/releases">Releases</a>
   </footer>
 </body>
